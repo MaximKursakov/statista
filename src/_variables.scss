@@ -1,0 +1,16 @@
+// colors
+$blue: #b3cde3;
+$green: #ccebc5;
+$gradient: linear-gradient(45deg, #b3cde3, #ccebc5);
+$red: #fbb4ae;
+$dark-blue: #0b141e;
+$font-color: #181D19; 
+
+//font-sizes
+$base-fontsize: 16px;
+$scale: 1.333;
+$h5: calc($base-fontsize * $scale);
+$h4: calc($h5 * $scale);
+$h3: calc($h4 * $scale);
+$h2: calc($h3 * $scale);
+$h1: calc($h2 * $scale);

@@ -10,7 +10,6 @@ interface Props {
 
 export const MyResponsiveBar:React.FC<Props> = ({ data  }) => {
     const totalReviews = data[0].score + data[1].score +data[2].score+data[3].score+data[4].score
-    
     let averageStars = (5 * data[0].score + 4 * data[1].score + 3 * data[2].score + 2 * data[3].score + 1 * data[4].score) / totalReviews
     const roundedAvgStars = averageStars.toFixed(1)
     return(
@@ -21,7 +20,7 @@ export const MyResponsiveBar:React.FC<Props> = ({ data  }) => {
         keys={[
             "score"
         ]}
-        indexBy="review"
+        indexBy= "review"
         margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
         padding={0.85}
         maxValue={totalReviews}
@@ -79,15 +78,9 @@ export const MyResponsiveBar:React.FC<Props> = ({ data  }) => {
         axisBottom={null}
         enableGridY={true}
         enableLabel={false}
-        labelTextColor={{
-            from: 'color',
-            modifiers: [
-                [
-                    'darker',
-                    1.6
-                ]
-            ]
-        }}
+        labelSkipWidth={1}
+        labelSkipHeight={1}
+        labelTextColor="#636363"
         legends={[]}
         motionConfig="gentle"
         role="application"

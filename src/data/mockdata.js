@@ -30,3 +30,7 @@ export const data = [
       "grillfuerst": .80,
     }
   ]
+
+  export const secondData = ["weber", "grillfuerst"]
+
+  //wenn ich auf eine liste clicke (mit dem titel einer company, wird dieser titel dadrin gespeichert 

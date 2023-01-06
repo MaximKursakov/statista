@@ -13,14 +13,16 @@ interface Props {
     aspect: string,
     weber: number,
     grillfuerst: number,
-    }[]
+    }[],
+    radarData: string
 }
 
-export const MyResponsiveRadar:React.FC<Props> = ({ data }) => (
-
+export const MyResponsiveRadar:React.FC<Props> = ({ data, radarData }) => {
+    console.log(radarData)
+    return(
     <ResponsiveRadar
         data={data}
-        keys={[ 'weber', 'grillfuerst' ]}
+        keys={[ radarData]}
         indexBy="aspect"
         maxValue={1}
         valueFormat=">-.2%"
@@ -58,4 +60,4 @@ export const MyResponsiveRadar:React.FC<Props> = ({ data }) => (
             }
         ]}
     />
-)
+)}

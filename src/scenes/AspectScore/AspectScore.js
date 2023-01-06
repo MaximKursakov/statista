@@ -7,14 +7,19 @@ import { Filter } from "../../components/Filter";
 import { useState } from "react";
 
 export const AspectScore = () => {
-    const [radarData, setRadarData] = useState(null)
+    const [radarData, setRadarData] = useState([])
+    function filterData(name){
+        if(!radarData.includes(name)) {
+            setRadarData(radarData.concat(name))
+        }
+    }
     
     return(
         <div className="aspect-score">
             {secondData.map((name) => {
             return(
                 <>
-                <button onClick={() => setRadarData(name)}>{name}</button>
+                <button onClick={() => filterData(name)}>{name}</button>
                 </>
                 )
             })}

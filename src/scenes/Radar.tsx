@@ -1,20 +1,13 @@
 import { ResponsiveRadar } from '@nivo/radar';
 import React from 'react';
 
-
-// make sure parent container have a defined height when using
-// responsive component, otherwise height will be 0 and
-// no chart will be rendered.
-// website examples showcase many properties,
-// you'll often use just a few of them.
-
 interface Props {
     data : {
     aspect: string,
     weber: number,
     grillfuerst: number,
     }[],
-    radarData: string
+    radarData: []
 }
 
 export const MyResponsiveRadar:React.FC<Props> = ({ data, radarData }) => {
@@ -22,7 +15,7 @@ export const MyResponsiveRadar:React.FC<Props> = ({ data, radarData }) => {
     return(
     <ResponsiveRadar
         data={data}
-        keys={[ radarData]}
+        keys={radarData.map((item) => {return item})}
         indexBy="aspect"
         maxValue={1}
         valueFormat=">-.2%"

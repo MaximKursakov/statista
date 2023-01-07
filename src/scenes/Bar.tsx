@@ -1,5 +1,6 @@
 import { ResponsiveBar } from '@nivo/bar'
 import { useState } from 'react'
+import Rating from "@mui/material/Rating/Rating"
 
 interface Props {
     data : {
@@ -14,7 +15,13 @@ export const MyResponsiveBar:React.FC<Props> = ({ data  }) => {
     const roundedAvgStars = averageStars.toFixed(1)
     return(
         <>
-        <h2>Reviews: {roundedAvgStars}/5</h2>
+        <h2>{roundedAvgStars}/5</h2>
+        <Rating 
+            name="read-only" 
+            value={4.2} 
+            precision={0.1}
+            readOnly />
+        <p>{totalReviews} Reviews</p>
     <ResponsiveBar
         data={data}
         keys={[

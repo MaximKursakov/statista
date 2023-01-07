@@ -2,20 +2,22 @@ import { ResponsiveRadar } from '@nivo/radar';
 import React from 'react';
 
 interface Props {
+    radarData1:string,
+    radarData2:string,
     data : {
     aspect: string,
     weber: number,
     grillfuerst: number,
     }[],
-    radarData: []
+    
 }
 
-export const MyResponsiveRadar:React.FC<Props> = ({ data, radarData }) => {
-    console.log(radarData)
+export const MyResponsiveRadar:React.FC<Props> = ({ data, radarData1, radarData2  }) => {
+    console.log(radarData1, radarData2)
     return(
     <ResponsiveRadar
         data={data}
-        keys={radarData.map((item) => {return item})}
+        keys={[radarData1, radarData2]}
         indexBy="aspect"
         maxValue={1}
         valueFormat=">-.2%"

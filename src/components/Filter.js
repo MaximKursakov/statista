@@ -2,30 +2,33 @@ import { useState } from "react"
 import { data, dataRefernce } from "../data/mockdata"
 
 export const Filter = ({radarData, setRadarData}) => {
-    function filterData(item){
-        if(!radarData.includes(item.name)) {
-            setRadarData(radarData.concat(item.name))
-        }
+    function updateData(data) {
+        if(!radarData.includes(data)) {
+            setRadarData(radarData.concat(data))
+        } 
     }
-    console.log(dataRefernce)
+    function filterData(e, prod){
+        console.log(e.target.value)
+        if (prod === undefined){
+            setRadarData(e.target.value)
+        } 
+        else updateData(prod.name)
+    }
     return (
         <>
-        {dataRefernce.map((item) => {
+        <select onChange={(e) => filterData(e)} name="company" id="select-company">
+            <option value="">Company</option>
+            {dataRefernce.map((item) => {
             return(
                 <>
-                <div>
-                    <button onClick={() => filterData(item)}>{item.name}</button>
-                </div>
-                <div>
-                    {item.products.map((prod) => {
-                        return(
-                            <button onClick={() => filterData(prod)}>{prod.name}</button>
-                        )
-                    })}
-                </div>
+                    <option value={item.name} selected={item.name === radarData ? "selected" : null}>{item.name}</option>
                 </>
                 )
             })}
+        </select>
+        
         </>
     )
 }
+
+//wenn in radardata bereits data drinnen ist mit

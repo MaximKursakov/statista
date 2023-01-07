@@ -6,6 +6,9 @@ export const data = [
       "weber-prod2" : .20,
       "weber-prod3" : .12,
       "grillfuerst": .74,
+      "grillfuerst-prod1" : .55,
+      "grillfuerst-prod2" : .77,
+      "grillfuerst-prod3" : .80,
     },
     {
       "aspect": "Safety",
@@ -14,6 +17,9 @@ export const data = [
       "weber-prod2" : .45,
       "weber-prod3" : .70,
       "grillfuerst": .87,
+      "grillfuerst-prod1" : .90,
+      "grillfuerst-prod2" : .84,
+      "grillfuerst-prod3" : .87,
     },
     {
       "aspect": "Design",
@@ -22,6 +28,9 @@ export const data = [
       "weber-prod2" : .100,
       "weber-prod3" : .90,
       "grillfuerst": .65,
+      "grillfuerst-prod1" : .90,
+      "grillfuerst-prod2" : .87,
+      "grillfuerst-prod3" : .66,
     },
     {
       "aspect": "Service",
@@ -30,6 +39,9 @@ export const data = [
       "weber-prod2" : .20,
       "weber-prod3" : .52,
       "grillfuerst": .25,
+      "grillfuerst-prod1" : .14,
+      "grillfuerst-prod2" : .33,
+      "grillfuerst-prod3" : .25,
     },
     {
       "aspect": "Cleaning",
@@ -38,6 +50,9 @@ export const data = [
       "weber-prod2" : .43,
       "weber-prod3" : .38,
       "grillfuerst": .80,
+      "grillfuerst-prod1" : .90,
+      "grillfuerst-prod2" : .67,
+      "grillfuerst-prod3" : .74,
     },
     {
       "aspect": "Food Taste",
@@ -46,6 +61,9 @@ export const data = [
       "weber-prod2" : .40,
       "weber-prod3" : .45,
       "grillfuerst": .80,
+      "grillfuerst-prod1" : .90,
+      "grillfuerst-prod2" : .87,
+      "grillfuerst-prod3" : .66,
     }
   ]
 

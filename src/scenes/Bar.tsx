@@ -3,29 +3,32 @@ import { useState } from 'react'
 import Rating from "@mui/material/Rating/Rating"
 
 interface Props {
+    SelectedCompany1: string,
     data : {
     "review" : string,
-    "score" : number
+    [key: string]: any
     }[]
 }
 
-export const MyResponsiveBar:React.FC<Props> = ({ data  }) => {
-    const totalReviews = data[0].score + data[1].score +data[2].score+data[3].score+data[4].score
-    let averageStars = (5 * data[0].score + 4 * data[1].score + 3 * data[2].score + 2 * data[3].score + 1 * data[4].score) / totalReviews
+export const MyResponsiveBar:React.FC<Props> = ({ data, SelectedCompany1 }) => {
+
+    
+    const totalReviews = data[0][SelectedCompany1] + data[1][SelectedCompany1] + data[2][SelectedCompany1] + data[3][SelectedCompany1] + data[4][SelectedCompany1]
+    let averageStars = (5 * data[0][SelectedCompany1] + 4 * data[1][SelectedCompany1] + 3 * data[2][SelectedCompany1] + 2 * data[3][SelectedCompany1] + 1 * data[4][SelectedCompany1]) / totalReviews
     const roundedAvgStars = averageStars.toFixed(1)
     return(
         <>
         <h2>{roundedAvgStars}/5</h2>
         <Rating 
             name="read-only" 
-            value={4.2} 
+            value={+roundedAvgStars} 
             precision={0.1}
             readOnly />
-        <p>{totalReviews} Reviews</p>
+         <p>{totalReviews} Reviews</p>
     <ResponsiveBar
         data={data}
         keys={[
-            "score"
+            SelectedCompany1
         ]}
         indexBy= "review"
         margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
@@ -89,7 +92,7 @@ export const MyResponsiveBar:React.FC<Props> = ({ data  }) => {
         labelSkipHeight={1}
         labelTextColor="#636363"
         legends={[]}
-        motionConfig="gentle"
+        motionConfig="default"
         role="application"
         ariaLabel="Nivo bar chart demo"
         barAriaLabel={function(e){return e.id+": "+e.formattedValue+" in country: "+e.indexValue}}

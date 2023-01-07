@@ -7,19 +7,19 @@ import { Filter } from "../../components/Filter";
 import { useState } from "react";
 
 export const AspectScore = () => {
-    const [radarData1, setRadarData1] = useState("weber")
-    const [radarData2, setRadarData2] = useState("grillfuerst")
-    console.log(radarData1, radarData2)
+    const [SelectedCompany1, setSelectedCompany1] = useState("weber")
+    const [SelectedCompany2, setSelectedCompany2] = useState("grillfuerst")
+    
     
     return(
         <div className="aspect-score">
-            <Filter radarData={radarData1} setRadarData={setRadarData1}></Filter>
-            <Filter radarData={radarData2} setRadarData={setRadarData2}></Filter>
+            <Filter radarData={SelectedCompany1} setRadarData={setSelectedCompany1}></Filter>
+            <Filter radarData={SelectedCompany2} setRadarData={setSelectedCompany2}></Filter>
             <div className="aspect-radar">
-                <MyResponsiveRadar data={data} radarData1={radarData1} radarData2={radarData2}/>
+                <MyResponsiveRadar data={data} SelectedCompany1={SelectedCompany1} SelectedCompany2={SelectedCompany2}/>
             </div>
             <div className="review-bar">
-                <MyResponsiveBar data={mockReviews}/>
+                <MyResponsiveBar data={mockReviews} SelectedCompany1={SelectedCompany1}/>
             </div>
         </div>
     )

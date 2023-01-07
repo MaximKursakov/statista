@@ -9,6 +9,10 @@ export const data = [
       "grillfuerst-prod1" : .55,
       "grillfuerst-prod2" : .77,
       "grillfuerst-prod3" : .80,
+      "grillcenter": .57,
+      "grillcenter-prod1" : .63,
+      "grillcenter-prod2" : .25,
+      "grillcenter-prod3" : .95,
     },
     {
       "aspect": "Safety",
@@ -20,6 +24,10 @@ export const data = [
       "grillfuerst-prod1" : .90,
       "grillfuerst-prod2" : .84,
       "grillfuerst-prod3" : .87,
+      "grillcenter": .67,
+      "grillcenter-prod1" : .83,
+      "grillcenter-prod2" : .55,
+      "grillcenter-prod3" : .65,
     },
     {
       "aspect": "Design",
@@ -31,6 +39,10 @@ export const data = [
       "grillfuerst-prod1" : .90,
       "grillfuerst-prod2" : .87,
       "grillfuerst-prod3" : .66,
+      "grillcenter": .83,
+      "grillcenter-prod1" : .86,
+      "grillcenter-prod2" : .75,
+      "grillcenter-prod3" : .48,
     },
     {
       "aspect": "Service",
@@ -42,6 +54,10 @@ export const data = [
       "grillfuerst-prod1" : .14,
       "grillfuerst-prod2" : .33,
       "grillfuerst-prod3" : .25,
+      "grillcenter": .87,
+      "grillcenter-prod1" : .56,
+      "grillcenter-prod2" : .64,
+      "grillcenter-prod3" : .46,
     },
     {
       "aspect": "Cleaning",
@@ -53,6 +69,10 @@ export const data = [
       "grillfuerst-prod1" : .90,
       "grillfuerst-prod2" : .67,
       "grillfuerst-prod3" : .74,
+      "grillcenter": .56,
+      "grillcenter-prod1" : .53,
+      "grillcenter-prod2" : .84,
+      "grillcenter-prod3" : .66,
     },
     {
       "aspect": "Food Taste",
@@ -64,6 +84,10 @@ export const data = [
       "grillfuerst-prod1" : .90,
       "grillfuerst-prod2" : .87,
       "grillfuerst-prod3" : .66,
+      "grillcenter": .70,
+      "grillcenter-prod1" : .93,
+      "grillcenter-prod2" : .81,
+      "grillcenter-prod3" : .46,
     }
   ]
 
@@ -97,6 +121,21 @@ export const data = [
         price: 150
       }
     ]
-  }
+  },
+  {name: "grillcenter",
+  products: [{
+      name: "grillcenter-prod1",
+      price: 66
+    },
+    {
+      name: "grillcenter-prod2",
+      price: 70
+    },
+    {
+      name: "grillcenter-prod3",
+      price: 59
+    }
   ]
+}
+]
 

@@ -10,19 +10,20 @@ function valuetext(value: number) {
 interface Props {
   min: number,
   max: number,
-  SelectedCompany1: string,
-  setSelectedCompany1: Function
+  SelectedCompany: string,
+  setSelectedCompany: Function
 }
 
-export const RangeSlider:React.FC<Props> = ({min,max, SelectedCompany1, setSelectedCompany1}) => {
-  const [value, setValue] = React.useState<number[]>([40, 1000]);
+export const RangeSlider:React.FC<Props> = ({min,max, SelectedCompany, setSelectedCompany}) => {
+  const [value, setValue] = React.useState<number[]>([0, 1000]);
 
   const [minValue, setMinValue] = React.useState<number>()
   const [maxValue, setMaxValue] = React.useState<number>()
 
   React.useEffect(() => {
+    setValue([0, 1000])
     dataRefernce.map((item) => {
-      if(item.name === SelectedCompany1) {
+      if(item.name === SelectedCompany) {
         let priceArray: number[] = []
         item.products.map((product) => {
           priceArray.push(product.price)
@@ -31,9 +32,7 @@ export const RangeSlider:React.FC<Props> = ({min,max, SelectedCompany1, setSelec
         setMaxValue(Math.max(...priceArray))
       }
     })
-  }, [SelectedCompany1])
-  
-  console.log(minValue)
+  }, [SelectedCompany])
 
   const handleChange = (event: Event, newValue: number | number[]) => {
     setValue(newValue as number[]);

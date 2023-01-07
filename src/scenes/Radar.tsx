@@ -2,8 +2,7 @@ import { ResponsiveRadar } from '@nivo/radar';
 import React from 'react';
 
 interface Props {
-    SelectedCompany1:string,
-    SelectedCompany2:string,
+    displayedData: [],
     data : {
     aspect: string,
     weber: number,
@@ -12,11 +11,11 @@ interface Props {
     
 }
 
-export const MyResponsiveRadar:React.FC<Props> = ({ data, SelectedCompany1, SelectedCompany2  }) => {
+export const MyResponsiveRadar:React.FC<Props> = ({ data, displayedData  }) => {
     return(
     <ResponsiveRadar
         data={data}
-        keys={[SelectedCompany1, SelectedCompany2]}
+        keys={displayedData}
         indexBy="aspect"
         maxValue={1}
         valueFormat=">-.2%"

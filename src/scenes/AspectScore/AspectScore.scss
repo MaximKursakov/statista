@@ -1,9 +1,12 @@
 .aspect-score {
     width: 100vw;
     height: 100vh;
+    display: flex;
+    align-items: center;
     .aspect-radar, .review-bar {
         width: 50%;
-        height: 50%;
+        min-width: 400px;
+        aspect-ratio: 1/.9;
     }
 }
 

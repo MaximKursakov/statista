@@ -23,6 +23,7 @@ export const MyResponsiveBar:React.FC<Props> = ({ data, SelectedCompany1 }) => {
             name="read-only" 
             value={+roundedAvgStars} 
             precision={0.1}
+            sx={{color : "#f7d350"}}
             readOnly />
          <p>{totalReviews} Reviews</p>
     <ResponsiveBar
@@ -38,7 +39,7 @@ export const MyResponsiveBar:React.FC<Props> = ({ data, SelectedCompany1 }) => {
         layout="horizontal"
         valueScale={{ type: 'linear' }}
         indexScale={{ type: 'band', round: true }}
-        colors={{ scheme: 'nivo' }}
+        colors={"#f7d350"}
         defs={[
             {
                 id: 'dots',

@@ -8,7 +8,6 @@ export const Filter = ({radarData, setRadarData}) => {
         } 
     }
     function filterData(e, prod){
-        console.log(e.target.value)
         if (prod === undefined){
             setRadarData(e.target.value)
         } 

@@ -95,11 +95,11 @@ export const data = [
     {name: "weber",
     products: [{
       name: "weber-prod1",
-      price: 60
+      price: 90
     },
     {
       name: "weber-prod2",
-      price: 70
+      price: 72
     },
     {
       name: "weber-prod3",
@@ -133,7 +133,7 @@ export const data = [
     },
     {
       name: "grillcenter-prod3",
-      price: 59
+      price: 48
     }
   ]
 }

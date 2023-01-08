@@ -16,13 +16,11 @@ export const MyResponsiveBar:React.FC<Props> = ({ data, displayedData }) => {
     const [Total, setTotal] = useState<number>(0)
     const [totalReviews, setTotalReviews] = useState<number>(0)
     const [Average, setAverage] = useState<number>(0)
-    const [averageStars, setAverageStars] = useState<number>(0)
     
     useEffect(() => {
         setTotal(getTotalReviews(displayedData))
         setTotalReviews(Total)
         setAverage(starsSummed(displayedData))
-        setAverageStars(Average)
     }, [displayedData])
     function getTotalReviews(item : string) {
         return data.reduce((acc, cur) => acc + cur[item], 0);
@@ -36,7 +34,7 @@ export const MyResponsiveBar:React.FC<Props> = ({ data, displayedData }) => {
         return product 
     }
     function getAverageStars(average : number, total : number) {
-        return (average / total).toFixed(2)
+        return (average / total).toFixed(1)
     }
     return(
         <>

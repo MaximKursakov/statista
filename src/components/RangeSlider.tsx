@@ -15,10 +15,9 @@ interface Props {
   min: number,
   max: number,
   SelectedCompany: string,
-  setSelectedCompany: Function
 }
 
-export const RangeSlider:React.FC<Props> = ({min,max, SelectedCompany, setSelectedCompany}) => {
+export const RangeSlider:React.FC<Props> = ({min,max, SelectedCompany}) => {
   const [value, setValue] = React.useState<number[]>([]);
   
 

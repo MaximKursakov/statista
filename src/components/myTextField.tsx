@@ -18,7 +18,6 @@ export const MyTextField:React.FC<Props> = ({value, setValue, minValue, maxValue
       newValues[index] = e;
       setValue(newValues);
       }
-      console.log(value)
   return (
       <> 
       <TextField 

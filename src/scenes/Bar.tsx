@@ -12,25 +12,38 @@ interface Props {
 
 export const MyResponsiveBar:React.FC<Props> = ({ data, displayedData }) => {
     
-    // const totalReviews = data[0][displayedData] + data[1][displayedData] + data[2][displayedData] + data[3][displayedData] + data[4][displayedData]
-    function getTotalReviews(item : string) {
-        return data.reduce((acc, cur) => acc + cur[item], 0);
-    }
+    
     const [Total, setTotal] = useState<number>(0)
-    const [totalReviews, setTotalReviews] = useState<number>()
+    const [totalReviews, setTotalReviews] = useState<number>(0)
+    const [Average, setAverage] = useState<number>(0)
+    const [averageStars, setAverageStars] = useState<number>(0)
+    
     useEffect(() => {
         setTotal(getTotalReviews(displayedData))
         setTotalReviews(Total)
-        console.log(Total)
+        setAverage(starsSummed(displayedData))
+        setAverageStars(Average)
     }, [displayedData])
-    // let averageStars = (1 * data[0][displayedData] + 2 * data[1][displayedData] + 3 * data[2][displayedData] + 4 * data[3][displayedData] + 5 * data[4][displayedData]) / totalReviews
-    // const roundedAvgStars = averageStars.toFixed(1)
+    function getTotalReviews(item : string) {
+        return data.reduce((acc, cur) => acc + cur[item], 0);
+    }
+    function starsSummed(item : string) {
+        let i = 0
+        let product = data.reduce((acc, cur) => {
+            i++
+            return (acc + i * cur[item])
+            }, 0);
+        return product 
+    }
+    function getAverageStars(average : number, total : number) {
+        return (average / total).toFixed(2)
+    }
     return(
         <>
-        {/* <h2>{roundedAvgStars}/5</h2> */}
+        <h2>{getAverageStars(Average, Total)}/5</h2>
         <Rating 
             name="read-only" 
-            // value={+roundedAvgStars} 
+            value={+getAverageStars(Average, Total)} 
             precision={0.1}
             sx={{color : "#f7d350"}}
             readOnly />

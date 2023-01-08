@@ -25,7 +25,7 @@ export const MyResponsiveRadar:React.FC<Props> = ({ data, displayedData  }) => {
         gridLabelOffset={40}
         gridLevels={5}
         gridShape="circular"
-        dotSize={30}
+        dotSize={0}
         dotColor={{ from: 'color', modifiers: [] }}
         dotBorderWidth={2}
         colors={{ scheme: 'pastel1' }}

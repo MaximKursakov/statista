@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { data, dataRefernce } from "../data/mockdata"
 
-export const Filter = ({radarData, setRadarData, SelectedProduct, setSelectedProduct}) => {
+export const Filter = ({radarData, setRadarData, SelectedProduct, setSelectedProduct, displayedData}) => {
     function filterData(e) {
         setRadarData(e)
         setSelectedProduct(undefined)
@@ -13,7 +13,7 @@ export const Filter = ({radarData, setRadarData, SelectedProduct, setSelectedPro
             <option value="">Company</option>
             {dataRefernce.map((item) => {
             return(
-                    <option value={item.name} selected={item.name === radarData ? "selected" : null}>{item.name}</option>
+                    <option value={item.name}>{item.name}</option>
                 )
             })}
         </select>
@@ -23,7 +23,12 @@ export const Filter = ({radarData, setRadarData, SelectedProduct, setSelectedPro
                 if (item.name === radarData) {
                     return item.products.map((product) => {
                         return(
+                            <>
+                            {!displayedData.includes(product.name) ?
                             <option value={product.name} >{product.name}</option>
+                            : null}
+                            
+                            </>
                         )
                     })
                 }

@@ -28,6 +28,7 @@ export const MyTextField:React.FC<Props> = ({value, setValue, minValue, maxValue
       type="number"
       inputProps={{ min: minValue, max: maxValue }}
       defaultValue={defaultValue}
+      value={value[sliderIndex]}
       onChange={(e) => handleValueChange(parseInt(e.target.value), sliderIndex)}
       InputProps={{
         startAdornment: <InputAdornment position="start">€</InputAdornment>,

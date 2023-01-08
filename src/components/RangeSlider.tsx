@@ -19,7 +19,7 @@ interface Props {
 }
 
 export const RangeSlider:React.FC<Props> = ({min,max, SelectedCompany, setSelectedCompany}) => {
-  const [value, setValue] = React.useState<number[]>([0, 1000]);
+  const [value, setValue] = React.useState<number[]>([]);
   
 
   const [minValue, setMinValue] = React.useState<number>()
@@ -28,22 +28,26 @@ export const RangeSlider:React.FC<Props> = ({min,max, SelectedCompany, setSelect
   const { focused } = useFormControl() || {};
 
   React.useEffect(() => {
-    setValue([0, 1000])
+    
+
     dataRefernce.map((item) => {
       if(item.name === SelectedCompany) {
         let priceArray: number[] = []
         item.products.map((product) => {
           priceArray.push(product.price)
         })
-        setMinValue(Math.min(...priceArray))
-        setMaxValue(Math.max(...priceArray))
+        let lowestPrice = Math.min(...priceArray)
+        let highestPrice =Math.max(...priceArray)
+        setValue([lowestPrice, highestPrice])
+        setMinValue(lowestPrice)
+        setMaxValue(highestPrice)
       }
     })
   }, [SelectedCompany])
-
   const handleChange = (event: Event, newValue: number | number[]) => {
     setValue(newValue as number[]);
   };
+  
 
   return (
     <Box sx={{ width: 300 }}>

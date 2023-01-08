@@ -32,7 +32,7 @@ export const AspectScore = () => {
             <Filter radarData={SelectedCompany1} setRadarData={setSelectedCompany1} SelectedProduct={SelectedProduct1} setSelectedProduct={setSelectedProduct1} displayedData={displayedData}></Filter>
             <Filter radarData={SelectedCompany2} setRadarData={setSelectedCompany2} SelectedProduct={SelectedProduct2} setSelectedProduct={setSelectedProduct2} displayedData={displayedData}></Filter>
             <RangeSlider SelectedCompany={SelectedCompany1} setSelectedCompany={setSelectedCompany1}></RangeSlider>
-            <RangeSlider SelectedCompany={SelectedCompany2} setSelectedCompany={setSelectedCompany2}></RangeSlider>
+            {/* <RangeSlider SelectedCompany={SelectedCompany2} setSelectedCompany={setSelectedCompany2}></RangeSlider> */}
             <div className="aspect-radar">
                 <MyResponsiveRadar data={data} displayedData={displayedData}/>
             </div>

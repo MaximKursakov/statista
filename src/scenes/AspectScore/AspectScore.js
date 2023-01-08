@@ -10,8 +10,8 @@ import { RangeSlider } from "../../components/RangeSlider";
 
 
 export const AspectScore = () => {
-    const [SelectedCompany1, setSelectedCompany1] = useState("weber")
-    const [SelectedCompany2, setSelectedCompany2] = useState("grillfuerst")
+    const [SelectedCompany1, setSelectedCompany1] = useState()
+    const [SelectedCompany2, setSelectedCompany2] = useState()
     const [SelectedProduct1, setSelectedProduct1] = useState()
     const [SelectedProduct2, setSelectedProduct2] = useState()
 

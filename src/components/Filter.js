@@ -13,7 +13,7 @@ export const Filter = ({radarData, setRadarData, SelectedProduct, setSelectedPro
             <option value="">Company</option>
             {dataRefernce.map((item) => {
             return(
-                    <option value={item.name}>{item.name}</option>
+                    <option key={item.name} value={item.name}>{item.name}</option>
                 )
             })}
         </select>
@@ -25,9 +25,8 @@ export const Filter = ({radarData, setRadarData, SelectedProduct, setSelectedPro
                         return(
                             <>
                             {!displayedData.includes(product.name) ?
-                            <option value={product.name} >{product.name}</option>
+                            <option key={product.name} value={product.name} >{product.name}</option>
                             : null}
-                            
                             </>
                         )
                     })

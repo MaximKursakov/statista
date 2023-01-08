@@ -2,6 +2,10 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import Slider from '@mui/material/Slider';
 import { dataRefernce } from "../data/mockdata"
+import {TextField } from '@mui/material';
+import {MyTextField} from './myTextField';
+
+import { useFormControl } from '@mui/material/FormControl';
 
 function valuetext(value: number) {
   return `${value}€`;
@@ -16,9 +20,12 @@ interface Props {
 
 export const RangeSlider:React.FC<Props> = ({min,max, SelectedCompany, setSelectedCompany}) => {
   const [value, setValue] = React.useState<number[]>([0, 1000]);
+  
 
   const [minValue, setMinValue] = React.useState<number>()
   const [maxValue, setMaxValue] = React.useState<number>()
+
+  const { focused } = useFormControl() || {};
 
   React.useEffect(() => {
     setValue([0, 1000])
@@ -52,6 +59,8 @@ export const RangeSlider:React.FC<Props> = ({min,max, SelectedCompany, setSelect
         valueLabelDisplay="auto"
         getAriaValueText={valuetext}
       />
+      <MyTextField value={value} setValue={setValue} minValue={minValue} maxValue={maxValue} defaultValue={minValue} sliderIndex={0}></MyTextField>
+      <MyTextField value={value} setValue={setValue} minValue={minValue} maxValue={maxValue} defaultValue={maxValue} sliderIndex={1}></MyTextField>
     </Box>
   );
 }

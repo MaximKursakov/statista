@@ -1,7 +1,7 @@
 import { MyResponsiveRadar } from "../Radar";
 import { data, dataRefernce } from "../../data/mockdata"
 import {mockReviews} from "../../data/mockReviews"
-import "./AspectScore.scss"
+import "./Benchmark.scss"
 import { MyResponsiveBar } from "../Bar";
 import { Filter } from "../../components/Filter";
 import { useState, useEffect } from "react";
@@ -11,10 +11,9 @@ import { Stack } from "@mui/system";
 import DatePicker from "../../components/DatePicker";
 import { ProSidebarProvider, Sidebar } from "react-pro-sidebar";
 import { Layout } from "../../components/SidebarLayout";
-import { Aspect } from "../../components/Aspect";
 
 
-export const AspectScore = () => {
+export const Benchmark = () => {
     const [SelectedCompany1, setSelectedCompany1] = useState()
     const [SelectedCompany2, setSelectedCompany2] = useState()
     const [SelectedProduct1, setSelectedProduct1] = useState()
@@ -36,16 +35,18 @@ export const AspectScore = () => {
             <Layout></Layout>
             <div className="aspect-score">
                 <div>
-                    <Filter radarData={SelectedCompany1} setRadarData={setSelectedCompany1} SelectedProduct={SelectedProduct1} setSelectedProduct={setSelectedProduct1} displayedData={displayedData} index={1}></Filter>
-                    <RangeSlider SelectedCompany={SelectedCompany1}></RangeSlider>
-                    <DatePicker/>
-                    <DatePicker/>
+                <Filter radarData={SelectedCompany1} setRadarData={setSelectedCompany1} SelectedProduct={SelectedProduct1} setSelectedProduct={setSelectedProduct1} displayedData={displayedData} index={1}></Filter>
+                <Filter radarData={SelectedCompany2} setRadarData={setSelectedCompany2} SelectedProduct={SelectedProduct2} setSelectedProduct={setSelectedProduct2} displayedData={displayedData} index={0}></Filter>
+                <RangeSlider SelectedCompany={SelectedCompany1}></RangeSlider>
+                <DatePicker/>
+                <DatePicker/>
+                </div>
+                <div className="aspect-radar">
+                    <MyResponsiveRadar data={data} displayedData={displayedData}/>
                 </div>
                 <div className="review-bar">
                     <MyResponsiveBar data={mockReviews} displayedData={displayedData[0]}/>
-                </div>
-                <div>
-                    <Aspect currentProduct={displayedData[0]}></Aspect>
+                    <MyResponsiveBar data={mockReviews} displayedData={displayedData[1]}/>
                 </div>
             </div>
         </ProSidebarProvider>

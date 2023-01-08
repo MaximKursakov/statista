@@ -1,6 +1,7 @@
 import { ResponsiveBar } from '@nivo/bar'
 import { useEffect, useState } from 'react'
 import Rating from "@mui/material/Rating/Rating"
+import "./Bar.scss"
 
 interface Props {
     displayedData: string,
@@ -38,14 +39,18 @@ export const MyResponsiveBar:React.FC<Props> = ({ data, displayedData }) => {
     }
     return(
         <>
-        <h2>{getAverageStars(Average, Total)}/5</h2>
-        <Rating 
-            name="read-only" 
-            value={+getAverageStars(Average, Total)} 
-            precision={0.1}
-            sx={{color : "#f7d350"}}
-            readOnly />
-         <p>{displayedData}: {Total} Reviews</p>
+        <h2>Reliable Reviews</h2>
+        <p>Anti-spam filtered Reviews</p>
+        <div className='review__general'>
+            <h2>{getAverageStars(Average, Total)}/5</h2>
+            <Rating 
+                name="read-only" 
+                value={+getAverageStars(Average, Total)} 
+                precision={0.1}
+                sx={{color : "#f7d350"}}
+                readOnly />
+            <p>{Total} Reviews</p>
+         </div>
     <ResponsiveBar
         data={data}
         keys={[displayedData]}

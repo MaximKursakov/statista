@@ -12,10 +12,11 @@ import DatePicker from "../../components/DatePicker";
 import { ProSidebarProvider, Sidebar } from "react-pro-sidebar";
 import { Layout } from "../../components/SidebarLayout";
 import { Aspect } from "../../components/Aspect";
+import { Subscription } from "../Subscription";
 
 
 export const AspectScore = () => {
-    const [SelectedCompany1, setSelectedCompany1] = useState()
+    const [SelectedCompany1, setSelectedCompany1] = useState("weber")
     const [SelectedCompany2, setSelectedCompany2] = useState()
     const [SelectedProduct1, setSelectedProduct1] = useState()
     const [SelectedProduct2, setSelectedProduct2] = useState()
@@ -35,17 +36,19 @@ export const AspectScore = () => {
         <ProSidebarProvider>
             <Layout></Layout>
             <div className="aspect-score">
-                <div>
+                <div className="filter">
                     <Filter radarData={SelectedCompany1} setRadarData={setSelectedCompany1} SelectedProduct={SelectedProduct1} setSelectedProduct={setSelectedProduct1} displayedData={displayedData} index={1}></Filter>
+                    
+                    <DatePicker/>
+                    <DatePicker/>
                     <RangeSlider SelectedCompany={SelectedCompany1}></RangeSlider>
-                    <DatePicker/>
-                    <DatePicker/>
                 </div>
-                <div className="review-bar">
-                    <MyResponsiveBar data={mockReviews} displayedData={displayedData[0]}/>
-                </div>
-                <div>
-                    <Aspect currentProduct={displayedData[0]}></Aspect>
+                <div className="aspect__content">
+                        <Subscription/>
+                        <div className="review">
+                            <MyResponsiveBar data={mockReviews} displayedData={displayedData[0]}/>
+                        </div>
+                        <Aspect currentProduct={displayedData[0]}></Aspect>
                 </div>
             </div>
         </ProSidebarProvider>

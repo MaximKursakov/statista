@@ -49,12 +49,17 @@ export const RangeSlider:React.FC<Props> = ({min,max, SelectedCompany}) => {
   
 
   return (
-    <Box sx={{ width: 300 }}>
+    <div className='filter__price'>
+    <Box sx={{  }}>
+      <div className='price__input'>
+      <MyTextField value={value} setValue={setValue} minValue={minValue} maxValue={maxValue} defaultValue={minValue} sliderIndex={0}></MyTextField>
+      <MyTextField value={value} setValue={setValue} minValue={minValue} maxValue={maxValue} defaultValue={maxValue} sliderIndex={1}></MyTextField>
+      </div>
       <Slider
         getAriaLabel={() => 'Price range'}
         value={value}
         sx={{
-          color:"#0b141e"
+          color:"#48484c"
         }}
         min={minValue}
         max={maxValue}
@@ -62,8 +67,7 @@ export const RangeSlider:React.FC<Props> = ({min,max, SelectedCompany}) => {
         valueLabelDisplay="auto"
         getAriaValueText={valuetext}
       />
-      <MyTextField value={value} setValue={setValue} minValue={minValue} maxValue={maxValue} defaultValue={minValue} sliderIndex={0}></MyTextField>
-      <MyTextField value={value} setValue={setValue} minValue={minValue} maxValue={maxValue} defaultValue={maxValue} sliderIndex={1}></MyTextField>
     </Box>
+    </div>
   );
 }

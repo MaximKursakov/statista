@@ -39,23 +39,26 @@ export const MyResponsiveBar:React.FC<Props> = ({ data, displayedData }) => {
     }
     return(
         <>
+        <div className='review__header'>
         <h2>Reliable Reviews</h2>
-        <p>Anti-spam filtered Reviews</p>
+        <p className='description'>Anti-spam filtered Reviews</p>
         <div className='review__general'>
-            <h2>{getAverageStars(Average, Total)}/5</h2>
+            <p className='general__score emphasize'>{getAverageStars(Average, Total)}/5</p>
             <Rating 
                 name="read-only" 
                 value={+getAverageStars(Average, Total)} 
                 precision={0.1}
                 sx={{color : "#f7d350"}}
                 readOnly />
-            <p>{Total} Reviews</p>
+            <p><span className='emphasize'>{Total}</span> Reviews</p>
          </div>
-    <ResponsiveBar
+         </div>
+         <div className='review__bar'>
+        <ResponsiveBar
         data={data}
         keys={[displayedData]}
         indexBy= "review"
-        margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+        margin={{ top: 0, right: 0, bottom: 0, left: 30 }}
         padding={0.75}
         innerPadding={1}
         maxValue={Total}
@@ -122,5 +125,6 @@ export const MyResponsiveBar:React.FC<Props> = ({ data, displayedData }) => {
         ariaLabel="Nivo bar chart demo"
         barAriaLabel={function(e){return e.id+": "+e.formattedValue+" in country: "+e.indexValue}}
     />
+    </div>
     </>
 )}

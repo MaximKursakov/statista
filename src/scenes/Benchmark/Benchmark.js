@@ -34,19 +34,21 @@ export const Benchmark = () => {
         <ProSidebarProvider>
             <Layout></Layout>
             <div className="aspect-score">
-                <div>
+                <div className="filter">
                 <Filter radarData={SelectedCompany1} setRadarData={setSelectedCompany1} SelectedProduct={SelectedProduct1} setSelectedProduct={setSelectedProduct1} displayedData={displayedData} index={1}></Filter>
                 <Filter radarData={SelectedCompany2} setRadarData={setSelectedCompany2} SelectedProduct={SelectedProduct2} setSelectedProduct={setSelectedProduct2} displayedData={displayedData} index={0}></Filter>
+                <DatePicker/>
+                <DatePicker/>
                 <RangeSlider SelectedCompany={SelectedCompany1}></RangeSlider>
-                <DatePicker/>
-                <DatePicker/>
                 </div>
-                <div className="aspect-radar">
-                    <MyResponsiveRadar data={data} displayedData={displayedData}/>
-                </div>
-                <div className="review-bar">
-                    <MyResponsiveBar data={mockReviews} displayedData={displayedData[0]}/>
-                    <MyResponsiveBar data={mockReviews} displayedData={displayedData[1]}/>
+                <div className="benchmark__content">
+                    <div className="aspect-radar">
+                        <MyResponsiveRadar data={data} displayedData={displayedData}/>
+                    </div>
+                    <div className="review">
+                        <MyResponsiveBar data={mockReviews} displayedData={displayedData[0]}/>
+                        <MyResponsiveBar data={mockReviews} displayedData={displayedData[1]}/>
+                    </div>
                 </div>
             </div>
         </ProSidebarProvider>

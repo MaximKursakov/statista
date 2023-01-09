@@ -6,6 +6,20 @@ body {
     font-family: raleway;
 }
 
+.App {
+    display: flex;
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4, p, button {
+    margin: 0;
+    font-family: raleway;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 600;
+}
+
 text {
     font-family: raleway !important;
 }

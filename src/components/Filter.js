@@ -16,7 +16,7 @@ export const Filter = ({radarData, setRadarData, SelectedProduct, setSelectedPro
             return(
                 <>
                 {displayedData[index] !== item.name ?
-                    <option key={item.name} value={item.name}>{item.name}</option>
+                    <option key={item.name} value={item.name} selected={item.name === displayedData[0] ? "selected" : null}>{item.name}</option>
                     : null}
                 </>
                 )

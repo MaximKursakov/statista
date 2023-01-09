@@ -2,17 +2,12 @@
 
 .aspect-score {
     color: $font-color;
-    width: 100vw;
     height: 100vh;
+    width: 80%;
     display: flex;
     flex-direction: column;
     padding: 0 5% 2rem 5%;
     white-space: nowrap;
-    .aspect-radar, .review-bar {
-        width: 20%;
-        min-width: 200px;
-        aspect-ratio: 1/.3;
-    }
     .filter {
     display: flex;
     align-items: flex-start;
@@ -38,6 +33,7 @@
         }
     }
     select, .select, .date {
+        color: $font-color;
         font-family: Raleway;
         text-align-last:center;
         padding-right: 29px;
@@ -98,6 +94,7 @@
     }
     .css-mwpvg0-MuiInputBase-root-MuiFilledInput-root {
         padding-bottom: .5rem;
+        color: $font-color;
     }
     .css-mwpvg0-MuiInputBase-root-MuiFilledInput-root {
         background-color: inherit;
@@ -122,6 +119,9 @@
             border-radius: 40px;
             padding: 3em;
         }
+        .review {
+            grid-area: review;
+        }
         .subscription {
             grid-area: subscription;
             background-color: $blue;
@@ -141,35 +141,6 @@
         }
         .description {
             padding: .5em 0;
-        }
-        .review {
-            margin-right: 2rem;
-            grid-area: review;
-            background-color: $beige;
-            
-            .review__header {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-evenly;
-                
-            }
-            .review__general {
-                display: flex;
-                align-items: center;
-                justify-content: space-between;
-                gap: 1em;
-                padding-top: 1em;
-                .general__score {
-                    
-                    border: solid $font-color 1px;
-                    padding: .2em 1em;
-                    border-radius: 50px;
-                }
-            }
-            .review__bar {
-                width: 100%;
-                aspect-ratio: 1/1;
-            }
         }
         .aspect__item {
             display: flex;
@@ -191,6 +162,57 @@
     }
 }
 
+.review__header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    
+}
+.review__general {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1em;
+    padding-top: 1em;
+    .general__score {
+        
+        border: solid $font-color 1px;
+        padding: .2em 1em;
+        border-radius: 50px;
+    }
+}
+.review-bar-container {
+    display: flex;
+}
+.review__bar {
+    width: 80%;
+    aspect-ratio: 1/1;
+}
+.review__bar-data {
+    font-size: 11px;
+    padding-left: 1rem;
+    margin: 1.2rem 0;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-around;
+}
+.review-compared {
+    display: flex;
+    justify-content: center;
+}
+.review {
+    margin-right: 2rem;
+    background-color: $beige;
+    border-radius: 40px;
+    padding: 3em;
+}
+.aspect-radar {
+    margin: 0 auto;
+    width: 50%;
+    aspect-ratio: 1/1;
+}
+
+
 
 
 .filter {
@@ -207,8 +229,74 @@
     }
 }
 
-.benchmark__content {
-    color: $font-color;
+.navbar {
+    position: sticky;
+    left: 0;
+    top: 0;
+    text-align: left;
+    width: 20vw;
+    height: 100vh;
     display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    white-space: nowrap;
+    background-color: $dark-blue;
+    color: white;
+    .logo {
+        width: 100%;
+        text-align: center;
+        margin: 3rem auto 0 auto;
+        font-size: $h1;
+        font-weight: 700;
+    }
+    a {
+        color: white;
+        text-decoration: none;
+        font-family: Raleway;
+        font-weight: 500;
+    }
+    .navbar__section {
+        margin: 0 10%;
+        display: flex;
+        align-items: center;
+        gap: 2rem;
+        padding: 8% 12%;
+        svg {
+            width: 2rem;
+            font-size: 1.5rem;
+        }
+    }
+    .navbar__section:has(.active) {
+        background-color: white;
+        border-radius: 20px;
+        a {
+            color: black;
+        }
+        svg {
+            color: black;
+        }
+    }
+    .divider {
+        width: 20%;
+        border-bottom: solid $font-color 1px;
+        margin: 0 auto;
+        margin: 2rem auto;
+    }
+    .last {
+        margin-bottom: 3rem;
+    }
+    .navbar__aspect {
+        margin: 0 auto;
+    }
+        button {
+            font-size: 1rem;
+            background-color: transparent;
+            font-family: Raleway;
+            color: white;
+            border: none;
+            font-weight: 500;
+    }
 }
+
 

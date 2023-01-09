@@ -13,7 +13,6 @@ interface Props {
 
 export const MyResponsiveBar:React.FC<Props> = ({ data, displayedData }) => {
     
-    
     const [Total, setTotal] = useState<number>(0)
     const [totalReviews, setTotalReviews] = useState<number>(0)
     const [Average, setAverage] = useState<number>(0)
@@ -61,78 +60,89 @@ export const MyResponsiveBar:React.FC<Props> = ({ data, displayedData }) => {
             <p><span className='emphasize'>{Total}</span> Reviews</p>
          </div>
          </div>
-         <div className='review__bar'>
-        <ResponsiveBar
-        data={data}
-        keys={[displayedData]}
-        indexBy= "review"
-        margin={{ top: 0, right: 0, bottom: 0, left: 30 }}
-        padding={0.85}
-        innerPadding={1}
-        maxValue={Total}
-        groupMode="stacked"
-        layout="horizontal"
-        valueScale={{ type: 'linear' }}
-        indexScale={{ type: 'band', round: true }}
-        colors={"#f7d350"}
-        defs={[
-            {
-                id: 'dots',
-                type: 'patternDots',
-                background: 'inherit',
-                color: "#f7d350",
-                size: 4,
-                padding: 1,
-                stagger: true
-            },
-            {
-                id: 'lines',
-                type: 'patternLines',
-                background: 'inherit',
-                color: "#f7d350",
-                rotation: -45,
-                lineWidth: 6,
-                spacing: 10
-            }
-        ]}
-        fill={[
-            {
-                match: {
-                    id: 'fries'
+         <div className='review-bar-container'>
+            <div className='review__bar'>
+            <ResponsiveBar
+            data={data}
+            keys={[displayedData]}
+            indexBy= "review"
+            margin={{ top: 0, right: 0, bottom: 0, left: 30 }}
+            padding={0.85}
+            innerPadding={1}
+            maxValue={Total}
+            groupMode="stacked"
+            layout="horizontal"
+            valueScale={{ type: 'linear' }}
+            indexScale={{ type: 'band', round: true }}
+            colors={"#f7d350"}
+            defs={[
+                {
+                    id: 'dots',
+                    type: 'patternDots',
+                    background: 'inherit',
+                    color: "#f7d350",
+                    size: 4,
+                    padding: 1,
+                    stagger: true
                 },
-                id: 'dots'
-            },
-            {
-                match: {
-                    id: 'sandwich'
+                {
+                    id: 'lines',
+                    type: 'patternLines',
+                    background: 'inherit',
+                    color: "#f7d350",
+                    rotation: -45,
+                    lineWidth: 6,
+                    spacing: 10
+                }
+            ]}
+            fill={[
+                {
+                    match: {
+                        id: 'fries'
+                    },
+                    id: 'dots'
                 },
-                id: 'lines'
-            }
-        ]}
-        borderRadius={3}
-        borderColor={{
-            from: 'color',
-            modifiers: [
-                [
-                    'darker',
-                    1.6
+                {
+                    match: {
+                        id: 'sandwich'
+                    },
+                    id: 'lines'
+                }
+            ]}
+            borderRadius={3}
+            borderColor={{
+                from: 'color',
+                modifiers: [
+                    [
+                        'darker',
+                        1.6
+                    ]
                 ]
-            ]
-        }}
-        axisTop={null}
-        axisRight={null}
-        axisBottom={null}
-        enableGridY={true}
-        enableLabel={false}
-        labelSkipWidth={1}
-        labelSkipHeight={1}
-        labelTextColor="#636363"
-        legends={[]}
-        motionConfig="default"
-        role="application"
-        ariaLabel="Nivo bar chart demo"
-        barAriaLabel={function(e){return e.id+": "+e.formattedValue+" in country: "+e.indexValue}}
-    />
+            }}
+            axisTop={null}
+            axisRight={null}
+            axisBottom={null}
+            enableGridY={true}
+            enableLabel={false}
+            labelSkipWidth={1}
+            labelSkipHeight={1}
+            labelTextColor="#636363"
+            legends={[]}
+            motionConfig="default"
+            role="application"
+            ariaLabel="Nivo bar chart demo"
+            barAriaLabel={function(e){return e.id+": "+e.formattedValue+" in country: "+e.indexValue}}
+        />
+        </div>
+        <div className='review__bar-data'>
+            {data.map((review : any) => {
+                return (
+                    <div>
+                        {review[displayedData]}
+                    </div>
+                )
+            })}
+        </div>
     </div>
     </>
 )}

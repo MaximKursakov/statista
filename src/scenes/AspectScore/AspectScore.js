@@ -9,8 +9,6 @@ import { selectClasses, Slider } from "@mui/material"
 import { RangeSlider } from "../../components/RangeSlider";
 import { Stack } from "@mui/system";
 import DatePicker from "../../components/DatePicker";
-import { ProSidebarProvider, Sidebar } from "react-pro-sidebar";
-import { Layout } from "../../components/SidebarLayout";
 import { Aspect } from "../../components/Aspect";
 import { Subscription } from "../Subscription";
 import {BiBlock} from "react-icons/bi"
@@ -34,8 +32,6 @@ export const AspectScore = () => {
         setDisplayedData(current => current.reverse())
       }, [SelectedCompany1, SelectedCompany2, SelectedProduct1, SelectedProduct2])      
     return(
-        <ProSidebarProvider>
-            <Layout></Layout>
             <div className="aspect-score">
                 <div className="filter">
                     <div className="filter__device center">
@@ -73,6 +69,5 @@ export const AspectScore = () => {
                         <Aspect currentProduct={displayedData[0]}></Aspect>
                 </div>
             </div>
-        </ProSidebarProvider>
     )
 }

@@ -19,7 +19,7 @@ export const MyResponsiveRadar:React.FC<Props> = ({ data, displayedData  }) => {
         indexBy="aspect"
         maxValue={1}
         valueFormat=">-.2%"
-        margin={{ top: 70, right: 80, bottom: 40, left: 80 }}
+        margin={{ top: 70, right: 80, bottom: 60, left: 80 }}
         borderWidth={.5}
         borderColor={{ from: 'color' }}
         gridLabelOffset={40}
@@ -33,7 +33,7 @@ export const MyResponsiveRadar:React.FC<Props> = ({ data, displayedData  }) => {
         motionConfig="gentle"
         legends={[
             {
-                anchor: 'left',
+                anchor: 'top-right',
                 direction: 'column',
                 translateX: 30,
                 translateY: 30,

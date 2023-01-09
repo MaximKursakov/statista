@@ -10,7 +10,6 @@ import { RangeSlider } from "../../components/RangeSlider";
 import { Stack } from "@mui/system";
 import DatePicker from "../../components/DatePicker";
 import { ProSidebarProvider, Sidebar } from "react-pro-sidebar";
-import { Layout } from "../../components/SidebarLayout";
 
 
 export const Benchmark = () => {
@@ -31,32 +30,52 @@ export const Benchmark = () => {
         setDisplayedData(current => current.reverse())
       }, [SelectedCompany1, SelectedCompany2, SelectedProduct1, SelectedProduct2])      
     return(
-        <ProSidebarProvider>
-            <Layout></Layout>
             <div className="aspect-score">
                 <div className="filter">
-                    <div className="device-type">
+                    <div className="device-type center">
                         <h2>Device Type</h2>
                         <select>
                             <option>All Devices</option>
                         </select>
                     </div>
-                <Filter radarData={SelectedCompany1} setRadarData={setSelectedCompany1} SelectedProduct={SelectedProduct1} setSelectedProduct={setSelectedProduct1} displayedData={displayedData} index={1}></Filter>
-                <Filter radarData={SelectedCompany2} setRadarData={setSelectedCompany2} SelectedProduct={SelectedProduct2} setSelectedProduct={setSelectedProduct2} displayedData={displayedData} index={0}></Filter>
-                <DatePicker/>
-                <DatePicker/>
-                <RangeSlider SelectedCompany={SelectedCompany1}></RangeSlider>
+                    <div className="filter__brand center">
+                    <h2>Brand</h2>
+                    <Filter radarData={SelectedCompany1} setRadarData={setSelectedCompany1} SelectedProduct={SelectedProduct1} setSelectedProduct={setSelectedProduct1} displayedData={displayedData} index={1}></Filter>
                 </div>
+                <div className="filter__brand center">
+                    <h2>Brand</h2>
+                    <Filter radarData={SelectedCompany2} setRadarData={setSelectedCompany2} SelectedProduct={SelectedProduct2} setSelectedProduct={setSelectedProduct2} displayedData={displayedData} index={0}></Filter>
+                </div>
+                <div className="filter__date center">
+                        <h2>Date</h2>
+                        <div className="filter-align">
+                        <input className="date" type="date" min="2021-05-03" max="2023-01-09" ></input>
+                        <input className="date" type="date" min="2021-05-03" max="2023-01-09" ></input>
+                        </div>
+                    </div>
+                    <div className="filter__price center">
+                        <h2>Price</h2>
+                        <RangeSlider SelectedCompany={SelectedCompany1}></RangeSlider>
+                    </div>
+                    <div className="filter__delete center">
+                        <h2>placeholder</h2>
+                        <button className="select" onClick={() => setDisplayedData([])}>Clear Filters</button>
+                    </div>
+                </div>
+                
                 <div className="benchmark__content">
-                    <div className="aspect-radar">
-                        <MyResponsiveRadar data={data} displayedData={displayedData}/>
-                    </div>
-                    <div className="review">
-                        <MyResponsiveBar data={mockReviews} displayedData={displayedData[0]}/>
-                        <MyResponsiveBar data={mockReviews} displayedData={displayedData[1]}/>
-                    </div>
+                    <div className="review-compared">
+                        <div className="review">  
+                            <MyResponsiveBar data={mockReviews} displayedData={displayedData[0]}/>
+                            </div>
+                        <div className="review">
+                            <MyResponsiveBar data={mockReviews} displayedData={displayedData[1]}/>
+                        </div>
+                        </div>
+                        <div className="aspect-radar">
+                            <MyResponsiveRadar data={data} displayedData={displayedData}/>
+                        </div>
                 </div>
             </div>
-        </ProSidebarProvider>
     )
 }

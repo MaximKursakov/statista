@@ -13,6 +13,7 @@ import { ProSidebarProvider, Sidebar } from "react-pro-sidebar";
 import { Layout } from "../../components/SidebarLayout";
 import { Aspect } from "../../components/Aspect";
 import { Subscription } from "../Subscription";
+import {BiBlock} from "react-icons/bi"
 
 
 export const AspectScore = () => {
@@ -37,11 +38,32 @@ export const AspectScore = () => {
             <Layout></Layout>
             <div className="aspect-score">
                 <div className="filter">
+                    <div className="filter__device center">
+                        <h2>Device Type </h2>
+                        <select>
+                            <option>-- </option>
+                            
+                        </select>
+                    </div>
+                    <div className="filter__brand center">
+                        <h2>Brand</h2>
                     <Filter radarData={SelectedCompany1} setRadarData={setSelectedCompany1} SelectedProduct={SelectedProduct1} setSelectedProduct={setSelectedProduct1} displayedData={displayedData} index={1}></Filter>
-                    
-                    <DatePicker/>
-                    <DatePicker/>
+                    </div>
+                    <div className="filter__date center">
+                        <h2>Date</h2>
+                        <div className="filter-align">
+                        <input className="date" type="date" min="2021-05-03" max="2023-01-09" ></input>
+                        <input className="date" type="date" min="2021-05-03" max="2023-01-09" ></input>
+                        </div>
+                    </div>
+                    <div className="filter__price center">
+                        <h2>Price</h2>
                     <RangeSlider SelectedCompany={SelectedCompany1}></RangeSlider>
+                    </div>
+                    <div className="filter__delete center">
+                        <h2>placeholder</h2>
+                        <button className="select" onClick={() => setDisplayedData([])}>Clear Filters</button>
+                    </div>
                 </div>
                 <div className="aspect__content">
                         <Subscription/>

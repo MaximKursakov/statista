@@ -10,7 +10,9 @@ interface Props {
 export const Aspect:React.FC<Props> = ({currentProduct}) => {
     console.log(data)
     function refactorData(data : number) {
+        data = data || 0
         return (data * 100).toFixed()
+
     }
     return(
         <>

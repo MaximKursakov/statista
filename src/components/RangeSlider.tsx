@@ -49,7 +49,7 @@ export const RangeSlider:React.FC<Props> = ({min,max, SelectedCompany}) => {
   
 
   return (
-    <div className='filter__price'>
+    <div className='price__fields'>
     <Box sx={{  }}>
       <div className='price__input'>
       <MyTextField value={value} setValue={setValue} minValue={minValue} maxValue={maxValue} defaultValue={minValue} sliderIndex={0}></MyTextField>

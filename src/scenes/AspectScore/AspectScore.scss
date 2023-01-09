@@ -7,10 +7,105 @@
     display: flex;
     flex-direction: column;
     padding: 0 5% 2rem 5%;
+    white-space: nowrap;
     .aspect-radar, .review-bar {
         width: 20%;
         min-width: 200px;
         aspect-ratio: 1/.3;
+    }
+    .filter {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 100%;
+    min-height: 10%;
+    gap: 2rem;
+    margin: 4rem 0;
+    > * {
+        margin: auto 0;
+    }
+    .filter__price {
+        padding-top: 1rem;
+        .price__input {
+            display: flex;
+            gap: 1rem;
+        }
+    }
+        .filter-align {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+        }
+    }
+    select, .select, .date {
+        font-family: Raleway;
+        text-align-last:center;
+        padding-right: 29px;
+        direction: rtl;
+        width: 100%;
+        text-align: center;
+        background-color: $beige;
+        border: none;
+        padding: .5em 1.5em;
+        border-radius: 50px;
+        -moz-appearance: none;
+        /* for Chrome */
+        -webkit-appearance: none;
+        text-overflow: '';
+        position: relative;
+        option::selecte {
+            text-align: justify;
+        }
+    }
+    .filter__delete {
+        h2 {
+            visibility: hidden;
+        }
+    }
+    .center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        h2 {
+            padding-bottom: 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        select::before {
+            content: "<";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto 0;
+        }
+        input[type="date"]::-webkit-inner-spin-button,
+        input[type="date"]::-webkit-calendar-picker-indicator {
+        display: none;
+        -webkit-appearance: none;
+}
+.text-field {
+    background-color: $beige;
+    border: none;
+    border-radius: 50px;
+    height: 1.8rem;
+    .MuiInputBase-sizeSmall {
+        border-radius: 50px;
+        height: 1.8rem;
+    }
+    .css-mwpvg0-MuiInputBase-root-MuiFilledInput-root {
+        padding-bottom: .5rem;
+    }
+    .css-mwpvg0-MuiInputBase-root-MuiFilledInput-root {
+        background-color: inherit;
+    }
+    .css-mwpvg0-MuiInputBase-root-MuiFilledInput-root:before  {
+        display: none;
+    }
+}
     }
     .aspect__content {
         display: grid;
@@ -41,6 +136,7 @@
                 border: none;
                 font-size: $h4;
                 font-weight: 600;
+                cursor: pointer;
             }
         }
         .description {

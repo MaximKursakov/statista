@@ -8,7 +8,7 @@ export const Filter = ({radarData, setRadarData, SelectedProduct, setSelectedPro
     }
 
     return (
-        <>
+        <div className="filter__company filter-align">
         <select onChange={(e) => filterData(e.target.value)} name="company" id="select-company">
             <option value="">Company</option>
             {dataRefernce.map((item) => {
@@ -38,7 +38,7 @@ export const Filter = ({radarData, setRadarData, SelectedProduct, setSelectedPro
                 }
             })}
         </select>
-        </>
+        </div>
     )
 }
 

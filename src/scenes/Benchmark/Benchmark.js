@@ -35,6 +35,12 @@ export const Benchmark = () => {
             <Layout></Layout>
             <div className="aspect-score">
                 <div className="filter">
+                    <div className="device-type">
+                        <h2>Device Type</h2>
+                        <select>
+                            <option>All Devices</option>
+                        </select>
+                    </div>
                 <Filter radarData={SelectedCompany1} setRadarData={setSelectedCompany1} SelectedProduct={SelectedProduct1} setSelectedProduct={setSelectedProduct1} displayedData={displayedData} index={1}></Filter>
                 <Filter radarData={SelectedCompany2} setRadarData={setSelectedCompany2} SelectedProduct={SelectedProduct2} setSelectedProduct={setSelectedProduct2} displayedData={displayedData} index={0}></Filter>
                 <DatePicker/>

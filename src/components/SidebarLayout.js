@@ -25,9 +25,9 @@ export function Layout() {
         }}>
             <MenuItem routerLink={<Link to="/" />}>Aspect scores</MenuItem>
             <MenuItem routerLink={<Link to="/Benchmark" />}>Benchmark</MenuItem>
-            <MenuItem routerLink={<Link to="/TimeSeries" />}> Time series</MenuItem>
-            <MenuItem routerLink={<Link to="/DriverAnalysis" />}> Driver analysis</MenuItem>
-            <MenuItem routerLink={<Link to="/AspectDetails" />}> Aspect details</MenuItem>
+            <MenuItem routerLink={<Link to="/" />}> Time series</MenuItem>
+            <MenuItem routerLink={<Link to="/" />}> Driver analysis</MenuItem>
+            <MenuItem routerLink={<Link to="/" />}> Aspect details</MenuItem>
         </Menu>
         </Sidebar>;
       <main>

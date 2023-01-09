@@ -19,12 +19,14 @@ export const MyTextField:React.FC<Props> = ({value, setValue, minValue, maxValue
       setValue(newValues);
       }
   return (
-      <> 
+      <div className='text-field'> 
       <TextField 
       id="standard-basic" 
-      label="Price" 
-      variant="standard"
+      fullWidth
+      // label="Price" 
+      variant="filled"
       type="number"
+      size='small'
       inputProps={{ min: minValue, max: maxValue }}
       defaultValue={defaultValue}
       value={value[sliderIndex]}
@@ -33,6 +35,6 @@ export const MyTextField:React.FC<Props> = ({value, setValue, minValue, maxValue
         startAdornment: <InputAdornment position="start">€</InputAdornment>,
       }}
       />
-      </>
+      </div>
   );
 }

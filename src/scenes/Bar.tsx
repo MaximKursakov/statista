@@ -24,7 +24,11 @@ export const MyResponsiveBar:React.FC<Props> = ({ data, displayedData }) => {
         setAverage(starsSummed(displayedData))
     }, [displayedData])
     function getTotalReviews(item : string) {
-        return data.reduce((acc, cur) => acc + cur[item], 0);
+        const summedArray = data.reduce((acc, cur) => acc + cur[item], 0)
+        if (isNaN(summedArray)) {
+            return 0;
+        }
+        return summedArray;
     }
     function starsSummed(item : string) {
         let i = 0
@@ -32,9 +36,13 @@ export const MyResponsiveBar:React.FC<Props> = ({ data, displayedData }) => {
             i++
             return (acc + i * cur[item])
             }, 0);
+            
         return product 
     }
     function getAverageStars(average : number, total : number) {
+        if (isNaN(average)) {
+            return 0;
+        }
         return (average / total).toFixed(1)
     }
     return(
@@ -59,7 +67,7 @@ export const MyResponsiveBar:React.FC<Props> = ({ data, displayedData }) => {
         keys={[displayedData]}
         indexBy= "review"
         margin={{ top: 0, right: 0, bottom: 0, left: 30 }}
-        padding={0.75}
+        padding={0.85}
         innerPadding={1}
         maxValue={Total}
         groupMode="stacked"

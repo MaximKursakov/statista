@@ -7,8 +7,9 @@
     display: flex;
     flex-direction: column;
     white-space: nowrap;
+    padding: 0 5%;
     .filter, .benchmark {
-    display: grid;
+    display: flex;
     grid-template-rows: 1fr;
     grid-template-columns: repeat(5, auto);
     width: 100%;
@@ -35,6 +36,9 @@
             justify-content: center;
             align-items: center;
             gap: 1rem;
+        }
+        .column {
+            flex-direction: column;
         }
     }
     .benchmark > * {
@@ -64,6 +68,7 @@
             text-align: justify;
         }
     }
+    
     .filter__delete {
         h2 {
             visibility: hidden;
@@ -76,6 +81,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
         h2 {
             padding-bottom: 1rem;
             font-size: 1.2rem;
@@ -96,6 +102,9 @@
         input[type="date"]::-webkit-calendar-picker-indicator {
         display: none;
         -webkit-appearance: none;
+}
+.column {
+    flex-direction: column;
 }
 .text-field {
     background-color: $beige;
@@ -243,6 +252,10 @@
 .review-compared {
     display: flex;
     justify-content: center;
+    gap: 10%;
+    .review {
+        width: 100%;
+    }
 }
 .review {
     margin-right: 2rem;
@@ -250,6 +263,7 @@
     border-radius: 40px;
     padding: 3em;
 }
+
 .aspect-radar {
     margin: 0 auto;
     width: 50%;
@@ -257,8 +271,7 @@
 }
 
 .benchmark .filter__price {
-    width: 50%;
-    min-width: 200px;
+    width: 300px;
     .price__input {
         width: 100%;
         display: flex;
@@ -428,10 +441,12 @@
     .review-compared {
         flex-direction: column;
         justify-content: center;
+        align-items: center;
         gap: 10%;
         .review {
             margin: 0;
             margin:5% 5%;
+            width: 60%;
         }
     }
     .aspect-radar {

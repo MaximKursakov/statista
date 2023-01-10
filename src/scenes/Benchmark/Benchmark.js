@@ -48,7 +48,7 @@ export const Benchmark = () => {
                 </div>
                 <div className="filter__date center">
                         <h2>Date</h2>
-                        <div className="filter-align">
+                        <div className="filter-align column">
                         <input className="date" type="date" min="2021-05-03" max="2023-01-09" ></input>
                         <input className="date" type="date" min="2021-05-03" max="2023-01-09" ></input>
                         </div>

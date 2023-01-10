@@ -35,12 +35,12 @@ export const MyResponsiveRadar:React.FC<Props> = ({ data, displayedData  }) => {
             {
                 anchor: 'top-right',
                 direction: 'column',
-                translateX: 30,
-                translateY: 30,
-                itemWidth: 0,
+                translateX: -170,
+                translateY: 0,
+                itemWidth: 30,
                 itemHeight: 30,
                 itemTextColor: '#999',
-                symbolSize: 12,
+                symbolSize: 16,
                 symbolShape: 'circle',
                 effects: [
                     {

@@ -1,4 +1,8 @@
 @import "../../variables";
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
 
 .aspect-score {
     color: $font-color;
@@ -8,6 +12,7 @@
     flex-direction: column;
     white-space: nowrap;
     padding: 0 5%;
+    position: relative;
     .filter, .benchmark {
     display: flex;
     grid-template-rows: 1fr;
@@ -143,6 +148,7 @@
         gap: 2rem;
         width: 100%;
         min-height: 70%;
+        margin-bottom: 5%;
         > * {
             border-radius: 40px;
             padding: 3em;
@@ -251,8 +257,8 @@
 }
 .review-compared {
     display: flex;
-    justify-content: center;
-    gap: 10%;
+    justify-content: space-between;
+    width: 100%;
     .review {
         width: 100%;
     }
@@ -281,6 +287,16 @@
         width: 100%;
     }
 }
+.burger {
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    margin: 0 auto;
+    scale: .3;
+    z-index: 1;
+    visibility: hidden;
+}
 
 
 .filter, .benchmark {
@@ -306,6 +322,7 @@
     text-align: left;
     width: 20vw;
     height: 100vh;
+    padding: 0 2%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -385,6 +402,9 @@
         width: 0;
         display: none;
     }
+    .burger {
+        visibility: visible;
+    }
     .aspect-score {
         width: 100%;
         
@@ -409,10 +429,6 @@
 }
 @media screen and (max-width: 872px) {
 
-    .navbar {
-        width: 0;
-        display: none;
-    }
     .aspect-score {
         .filter, .benchmark {
             display: flex;
@@ -440,9 +456,8 @@
     }
     .review-compared {
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
-        gap: 10%;
         .review {
             margin: 0;
             margin:5% 5%;
@@ -471,7 +486,6 @@
         h1 {
         }
         .filter {
-            padding: 30% 0;
 
         }
     }

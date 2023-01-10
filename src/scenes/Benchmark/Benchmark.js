@@ -10,6 +10,7 @@ import { RangeSlider } from "../../components/RangeSlider";
 import { Stack } from "@mui/system";
 import DatePicker from "../../components/DatePicker";
 import { ProSidebarProvider, Sidebar } from "react-pro-sidebar";
+import { Burger } from "../../components/Burger";
 
 
 export const Benchmark = () => {
@@ -29,6 +30,7 @@ export const Benchmark = () => {
         } else setDisplayedData(prevDisplayedData => [SelectedCompany2, ...prevDisplayedData.slice(-1)])
         setDisplayedData(current => current.reverse())
       }, [SelectedCompany1, SelectedCompany2, SelectedProduct1, SelectedProduct2])      
+
     return(
             <div className="aspect-score">
                 <div className="filter benchmark">
@@ -68,13 +70,14 @@ export const Benchmark = () => {
                         <div className="review">  
                             <MyResponsiveBar data={mockReviews} displayedData={displayedData[0]}/>
                             </div>
+                            <div className="aspect-radar">
+                            <MyResponsiveRadar data={data} displayedData={displayedData}/>
+                        </div>
                         <div className="review">
                             <MyResponsiveBar data={mockReviews} displayedData={displayedData[1]}/>
                         </div>
                         </div>
-                        <div className="aspect-radar">
-                            <MyResponsiveRadar data={data} displayedData={displayedData}/>
-                        </div>
+                        
                 </div>
             </div>
     )

@@ -1,14 +1,14 @@
 import { useState } from "react"
 import { data, dataRefernce } from "../data/mockdata"
 
-export const Filter = ({radarData, setRadarData, SelectedProduct, setSelectedProduct, displayedData, index}) => {
+export const Filter = ({radarData, setRadarData, SelectedProduct, setSelectedProduct, displayedData, flexDirection, index}) => {
     function filterData(e) {
         setRadarData(e)
         setSelectedProduct(undefined)
     }
 
     return (
-        <div className="filter__company filter-align">
+        <div className={`filter__company filter-align ${flexDirection}` }>
         <select onChange={(e) => filterData(e.target.value)} name="company" id="select-company">
             <option value="">Company</option>
             {dataRefernce.map((item) => {

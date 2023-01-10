@@ -4,6 +4,7 @@
 body {
     margin: 0;
     font-family: raleway;
+    overflow-x: hidden;
 }
 
 .App {

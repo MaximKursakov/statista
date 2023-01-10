@@ -57,7 +57,7 @@ export const MyResponsiveBar:React.FC<Props> = ({ data, displayedData }) => {
                 precision={0.1}
                 sx={{color : "#f7d350"}}
                 readOnly />
-            <p><span className='emphasize'>{Total}</span> Reviews</p>
+            <p><span className='emphasize'>{Total}</span></p>
          </div>
          </div>
          <div className='review-bar-container'>

@@ -43,11 +43,11 @@ export const AspectScore = () => {
                     </div>
                     <div className="filter__brand center">
                         <h2>Brand</h2>
-                    <Filter radarData={SelectedCompany1} setRadarData={setSelectedCompany1} SelectedProduct={SelectedProduct1} setSelectedProduct={setSelectedProduct1} displayedData={displayedData} index={1}></Filter>
+                    <Filter radarData={SelectedCompany1} setRadarData={setSelectedCompany1} SelectedProduct={SelectedProduct1} setSelectedProduct={setSelectedProduct1} displayedData={displayedData} flexDirection={"row"} index={1}></Filter>
                     </div>
                     <div className="filter__date center">
                         <h2>Date</h2>
-                        <div className="filter-align">
+                        <div className="filter-align row">
                         <input className="date" type="date" min="2021-05-03" max="2023-01-09" ></input>
                         <input className="date" type="date" min="2021-05-03" max="2023-01-09" ></input>
                         </div>
@@ -57,10 +57,11 @@ export const AspectScore = () => {
                     <RangeSlider SelectedCompany={SelectedCompany1}></RangeSlider>
                     </div>
                     <div className="filter__delete center">
-                        <h2>placeholder</h2>
+                        <h2 className="placeholder">placeholder</h2>
                         <button className="select" onClick={() => setDisplayedData([])}>Clear Filters</button>
                     </div>
                 </div>
+                <h1>Aspect-based Sentiment: {displayedData}</h1>
                 <div className="aspect__content">
                         <Subscription/>
                         <div className="review">

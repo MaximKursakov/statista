@@ -2,35 +2,46 @@
 
 .aspect-score {
     color: $font-color;
-    height: 100vh;
+    min-height: 100vh;
     width: 80%;
     display: flex;
     flex-direction: column;
-    padding: 0 5% 2rem 5%;
     white-space: nowrap;
-    .filter {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    .filter, .benchmark {
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(5, auto);
     width: 100%;
     min-height: 10%;
     gap: 2rem;
     margin: 4rem 0;
     > * {
         margin: auto 0;
+        select, .select, button, .price__input {
+            width: 100%;
+            min-width: 87px;
+        }
     }
     .filter__price {
-        padding-top: 1rem;
+        margin-top: 2rem;
         .price__input {
+            width: 100%;
             display: flex;
-            gap: 1rem;
+            gap: 5%;
         }
     }
         .filter-align {
             display: flex;
             justify-content: center;
+            align-items: center;
             gap: 1rem;
         }
+    }
+    .benchmark > * {
+        margin-top: 0;
+    }
+    .benchmark .filter__price {
+        margin-top: 0;
     }
     select, .select, .date {
         color: $font-color;
@@ -57,6 +68,9 @@
         h2 {
             visibility: hidden;
         }
+    }
+    .stack {
+        flex-direction: column;
     }
     .center {
         display: flex;
@@ -104,6 +118,11 @@
     }
 }
     }
+    h1 {
+        margin: 0 auto 2rem auto;
+        white-space: normal;
+        text-align: center;
+    }
     .aspect__content {
         display: grid;
         grid: 
@@ -129,14 +148,17 @@
             display: flex;
             flex-direction: column;
             align-items: flex-start;
+            // display: box;
             button {
                 color: $font-color;
+
                 margin-top: auto;
                 background-color: transparent;
                 border: none;
                 font-size: $h4;
                 font-weight: 600;
                 cursor: pointer;
+                // font-size: 1.5cqi;
             }
         }
         .description {
@@ -154,6 +176,28 @@
                 width: 100%;
                 justify-content: space-between;
                 align-items: center;
+                
+            }
+            .score-displayed {
+                position: relative;
+                width: 30%;
+                aspect-ratio: 1/1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                display: box;
+                min-width: 50px;
+                svg {
+                    position: absolute; 
+                    width: 100%; 
+                    min-width: 200px;
+                    height: 100%;
+                }
+                .aspect__score {
+                    margin: auto;
+                    font-weight: 600;
+                    font-size: 1.5cqi;
+                }
             }
         }
     }
@@ -172,7 +216,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 1em;
+    gap: 1%;
     padding-top: 1em;
     .general__score {
         
@@ -186,7 +230,7 @@
 }
 .review__bar {
     width: 80%;
-    aspect-ratio: 1/1;
+    aspect-ratio: 1/1.2;
 }
 .review__bar-data {
     font-size: 11px;
@@ -212,22 +256,35 @@
     aspect-ratio: 1/1;
 }
 
+.benchmark .filter__price {
+    width: 50%;
+    min-width: 200px;
+    .price__input {
+        width: 100%;
+        display: flex;
+        gap: 5%;
+    }
+    .text-field {
+        width: 100%;
+    }
+}
 
 
-
-.filter {
+.filter, .benchmark {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100%;
     min-height: 20%;
     gap: 2rem;
+    position: relative;
     .filter__price {
         .price__input {
             display: flex;
         }
     }
 }
+
 
 .navbar {
     position: sticky;
@@ -298,5 +355,112 @@
             font-weight: 500;
     }
 }
+
+
+@media screen and (max-width: 1500px) {
+    .aspect-score .filter, .aspect-score .benchmark {
+        .center {
+            .row {
+                flex-direction: column;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .navbar {
+        width: 0;
+        display: none;
+    }
+    .aspect-score {
+        width: 100%;
+        
+        .aspect__content {
+            display: grid;
+        grid: 
+        "subscription review"
+        "aspect aspect"
+        "aspect aspect"
+        "aspect aspect";
+        grid-template-rows: repeat(4, auto);
+        grid-template-columns: 1fr 1fr;
+        }
+        .review, .subscription {
+            min-height: 0;
+        }
+        .aspect__item {
+
+        }
+    }
+    
+}
+@media screen and (max-width: 872px) {
+
+    .navbar {
+        width: 0;
+        display: none;
+    }
+    .aspect-score {
+        .filter, .benchmark {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .aspect__content {
+            display: grid;
+        grid: 
+        "subscription subscription"
+        "review review"
+        "aspect aspect"
+        "aspect aspect"
+        "aspect aspect";
+        grid-template-rows: repeat(5, auto);
+        grid-template-columns: 1fr 1fr;
+        }
+        .review, .subscription {
+            min-height: 0;
+        }
+        .aspect__item {
+
+        }
+    }
+    .review-compared {
+        flex-direction: column;
+        justify-content: center;
+        gap: 10%;
+        .review {
+            margin: 0;
+            margin:5% 5%;
+        }
+    }
+    .aspect-radar {
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width: 550px) {
+    .aspect-score {
+        padding: 0;
+        .filter, .benchmark {
+            flex-wrap: nowrap;
+            flex-direction: column;
+            .filter-price {
+                margin-top: 0;
+            }
+            .placeholder {
+                display: none;
+            }
+        }
+        h1 {
+        }
+        .filter {
+            padding: 30% 0;
+
+        }
+    }
+}
+
 
 

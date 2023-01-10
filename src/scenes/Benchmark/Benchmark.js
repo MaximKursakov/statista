@@ -31,20 +31,20 @@ export const Benchmark = () => {
       }, [SelectedCompany1, SelectedCompany2, SelectedProduct1, SelectedProduct2])      
     return(
             <div className="aspect-score">
-                <div className="filter">
+                <div className="filter benchmark">
                     <div className="device-type center">
                         <h2>Device Type</h2>
                         <select>
-                            <option>All Devices</option>
+                            <option>--</option>
                         </select>
                     </div>
                     <div className="filter__brand center">
                     <h2>Brand</h2>
-                    <Filter radarData={SelectedCompany1} setRadarData={setSelectedCompany1} SelectedProduct={SelectedProduct1} setSelectedProduct={setSelectedProduct1} displayedData={displayedData} index={1}></Filter>
+                    <Filter radarData={SelectedCompany1} setRadarData={setSelectedCompany1} SelectedProduct={SelectedProduct1} setSelectedProduct={setSelectedProduct1} displayedData={displayedData} flexDirection={"column"} index={1}></Filter>
                 </div>
                 <div className="filter__brand center">
                     <h2>Brand</h2>
-                    <Filter radarData={SelectedCompany2} setRadarData={setSelectedCompany2} SelectedProduct={SelectedProduct2} setSelectedProduct={setSelectedProduct2} displayedData={displayedData} index={0}></Filter>
+                    <Filter radarData={SelectedCompany2} setRadarData={setSelectedCompany2} SelectedProduct={SelectedProduct2} setSelectedProduct={setSelectedProduct2} displayedData={displayedData} flexDirection={"column"} index={0}></Filter>
                 </div>
                 <div className="filter__date center">
                         <h2>Date</h2>
@@ -62,7 +62,7 @@ export const Benchmark = () => {
                         <button className="select" onClick={() => setDisplayedData([])}>Clear Filters</button>
                     </div>
                 </div>
-                
+                <h1>Benchmark Analysis</h1>
                 <div className="benchmark__content">
                     <div className="review-compared">
                         <div className="review">  

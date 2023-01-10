@@ -33,11 +33,11 @@ export const MyResponsiveRadar:React.FC<Props> = ({ data, displayedData  }) => {
         motionConfig="gentle"
         legends={[
             {
-                anchor: 'top-right',
-                direction: 'column',
-                translateX: -170,
-                translateY: 0,
-                itemWidth: 30,
+                anchor: 'bottom-left',
+                direction: 'row',
+                translateX: -60,
+                translateY: -90,
+                itemWidth: 120,
                 itemHeight: 30,
                 itemTextColor: '#999',
                 symbolSize: 16,

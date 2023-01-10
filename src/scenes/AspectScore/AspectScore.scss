@@ -1,4 +1,9 @@
 @import "../../variables";
+
+:root {
+    font-size: 16px;
+}
+
 body {
     margin: 0;
     overflow-x: hidden;
@@ -120,6 +125,9 @@ body {
         border-radius: 50px;
         height: 1.8rem;
     }
+    .css-1n3xqh3::after, .css-1n3xqh3::before {
+        display: none;
+    }
     .css-mwpvg0-MuiInputBase-root-MuiFilledInput-root {
         padding-bottom: .5rem;
         color: $font-color;
@@ -131,6 +139,7 @@ body {
         display: none;
     }
 }
+
     }
     h1 {
         margin: 0 auto 2rem auto;
@@ -249,6 +258,7 @@ body {
 }
 .review__bar-data {
     font-size: 11px;
+    font-family: Raleway;
     padding-left: 1rem;
     margin: 1.2rem 0;
     display: flex;

@@ -11,12 +11,30 @@ const App =() => {
   const [menuOpen, setMenuOpen] = useState(true)
   const windowSize = useRef(window.innerWidth);
 
-  console.log(windowSize.current)
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
   useEffect(() => {
-    if(windowSize.current <= 1250) {
+    const handleWindowResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    if(windowWidth <= 1250) {
+      setMenuOpen(false)
+    } else setMenuOpen(true)
+    window.addEventListener('resize', handleWindowResize);
+
+    return () => {
+      window.removeEventListener('resize', handleWindowResize);
+    };
+  });
+
+  console.log(windowWidth)
+  useEffect(() => {
+    if(windowWidth <= 1250) {
       setMenuOpen(false)
     } else setMenuOpen(true)
   }, [])
+
+  
 
   return (
     <div className="App">

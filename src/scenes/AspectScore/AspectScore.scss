@@ -272,7 +272,7 @@ body {
 
 .aspect-radar {
     margin: 0 auto;
-    width: 50%;
+    width: 100%;
     aspect-ratio: 1/1;
 }
 
@@ -344,7 +344,6 @@ body {
         font-weight: 500;
     }
     .navbar__section {
-        margin: 0 10%;
         display: flex;
         align-items: center;
         gap: 2rem;
@@ -467,16 +466,23 @@ body {
     .aspect-radar {
         width: 100%;
     }
-    
+    .filter-price {
+        margin-top: 0;
+    }
+}
+.radar-container {
+    width: 100%;
+    height: 100%;
 }
 
 @media screen and (max-width: 550px) {
     .aspect-score {
         padding: 0;
         .filter, .benchmark {
+            margin: 20% 0;
             flex-wrap: nowrap;
             flex-direction: column;
-            .filter-price {
+            .filter__price {
                 margin-top: 0;
             }
             .placeholder {
@@ -485,6 +491,7 @@ body {
         }
         h1 {
         }
+        
         .filter {
 
         }

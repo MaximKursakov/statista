@@ -70,8 +70,11 @@ export const Benchmark = () => {
                         <div className="review">  
                             <MyResponsiveBar data={mockReviews} displayedData={displayedData[0]}/>
                             </div>
+                            <div className="radar-container">
                             <div className="aspect-radar">
                             <MyResponsiveRadar data={data} displayedData={displayedData}/>
+
+                        </div>
                         </div>
                         <div className="review">
                             <MyResponsiveBar data={mockReviews} displayedData={displayedData[1]}/>
